@@ -168,9 +168,9 @@
         localStorage.setItem("theme", theme.id);
       }
       function apply() {
-        storedtheme = localStorage.getItem("theme");
+        StoreTheme = localStorage.getItem("theme");
         themeColor.forEach((theme) => {
-          if (theme.id === storedtheme) {
+          if (theme.id === StoreTheme) {
             theme.checked = true;
           }
         });
@@ -189,7 +189,7 @@
         li.innerHTML = `${item}<button class="btn btn-danger btn-sm float-right delete">X</button>`;
         document.getElementById("items").appendChild(li);
       }
-      function additem(k) {
+      function AddItem(k) {
         k.preventDefault();
         item = document.getElementById("item").value;
         li = document.createElement("li");
@@ -202,7 +202,7 @@
         localStorage.setItem("items", JSON.stringify(items));
       }
       form = document.getElementById("addForm");
-      form.addEventListener("submit", additem);
+      form.addEventListener("submit", AddItem);
       document.getElementById("items").addEventListener("click", remove);
       function remove(k) {
         el = k.target;
